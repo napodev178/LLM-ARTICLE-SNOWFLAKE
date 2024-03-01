@@ -21,12 +21,17 @@ Returns a DataFrame with the predicted category for each input text.
 4. Model Deployment and Usage:
 
 Lines 44-46: Create a model instance using the FacebookBartLargeMNLICustom class, providing the paths to the saved model and tokenizer.
+
+
 Line 47: Run a sample prediction on a DataFrame containing the text "The interface gets frozen very often".
+
 Lines 49-62: Register the custom model in the Snowflake model registry using model_registry.log_model. This involves specifying:
 Model name and version.
+
 The actual model object (cross_model in the code, likely referring to the instantiated FacebookBartLargeMNLICustom class).
 Conda dependencies needed to run the model.
 Input and output signatures for the prediction method.
+
 Line 64: Load the registered model using the model reference and model name/version.
 Line 65: Run another prediction on the same sample DataFrame.
 Lines 67-69: Set a dummy metric ("dataset_validation" with accuracy 0.9) for the model and then print all associated metrics (currently only the dummy metric).
